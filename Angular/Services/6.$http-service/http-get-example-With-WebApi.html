@@ -1,0 +1,38 @@
+<html ng-app="empApp">
+<head>
+  <title>$http get example</title>
+  <style>
+    .item {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body ng-controller="EmpCtrl as empCtrl">
+  <h1>Hello Servers!</h1>
+  <div ng-repeat="emp in empCtrl.items" class="item">
+    <div>Employee Id : <span ng-bind="emp.EmployeeId"></span></div>
+    <div>Name : <span ng-bind="emp.Name"></span></div>
+	<div>Salary : <span ng-bind="emp.Salary"></span></div>
+  </div>
+
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js">
+</script>
+<script>
+  angular.module('empApp', [])
+    .controller('EmpCtrl', ['$http', function($http) {
+      var self = this;
+      self.items = [];
+      $http({
+			method : "GET",
+			url : "http://localhost:54450/api/employee"			
+		}).then(function(response) {
+        self.items = response.data;
+      }, function(errResponse) {
+        console.error('Error while fetching notes');
+      });
+    }]);
+</script>
+</body>
+</html>

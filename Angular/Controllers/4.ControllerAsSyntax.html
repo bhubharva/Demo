@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+  <title>Controllers</title>
+</head>
+
+<body ng-controller="HomeController as home">
+  <h1>Controllers as syntax</h1> 
+  Message from controller : {{home.message}}  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+
+  <script type="text/javascript">
+    angular.module('myApp', [])
+      .controller('HomeController', function() {        
+		this.message = "HomeContorller is just created";
+      });
+  </script>
+
+
+</body>
+
+</html>

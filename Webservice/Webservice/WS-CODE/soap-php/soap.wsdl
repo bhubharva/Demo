@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions
+  targetNamespace='http://localhost/soap-php'
+  xmlns:xts='http://localhost/soap-php'
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+  <types>
+    <xsd:schema targetNamespace='http://localhost/soap-php'>
+      <xsd:include schemaLocation='http://localhost/soap-php/schema.xsd' />
+    </xsd:schema>
+  </types>
+
+  <message name='GetNextMeetingRequest'>
+  </message>
+  <message name='GetNextMeetingResponse'>
+    <part name='Meeting' type='xts:Meetings' />
+  </message>
+  <message name='GetTodaysMeetingsRequest'>
+  </message>
+  <message name='GetTodaysMeetingsResponse'>
+    <part name='Meetings' type='xts:Meetings' />
+  </message>
+
+  <portType name='ServicePortType'>
+    <operation name='GetNextMeeting'>
+      <input message='GetNextMeetingRequest' />
+      <output message='GetNextMeetingResponse' />
+    </operation>
+    <operation name='GetTodaysMeetings'>
+      <input message='GetTodaysMeetingsRequest' />
+      <output message='GetTodaysMeetingsResponse' />
+    </operation>
+  </portType>
+
+  <binding name='ServiceBinding' type='ServicePortType'>
+    <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+    <operation name='GetNextMeeting'>
+      <soap:operation soapAction='http://localhost/soap-php#GetNextMeeting'/>
+      <input>
+        <soap:body use='literal'
+                   encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+                   namespace='http://localhost/soap-php'/>
+      </input>
+      <output>
+        <soap:body use='literal'
+                   encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+                   namespace='http://localhost/soap-php'/>
+      </output>
+    </operation>
+    <operation name='GetTodaysMeetings'>
+      <soap:operation soapAction='http://localhost/soap-php#GetTodaysMeetings'/>
+      <input>
+        <soap:body use='literal'
+                   encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+                   namespace='http://localhost/soap-php'/>
+      </input>
+      <output>
+        <soap:body use='literal'
+                   encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+                   namespace='http://localhost/soap-php'/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name='MeetingSchedualService'>
+    <port binding='ServiceBinding' name='ServicePort1'>
+      <soap:address location='http://localhost/soap-php/server.php'/>
+    </port>
+  </service>
+</definitions>

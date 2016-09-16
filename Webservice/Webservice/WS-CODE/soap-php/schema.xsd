@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema elementFormDefault="qualified" xmlns="http://localhost/soap-php"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://localhost/soap-php">
+  <xsd:complexType name='Meeting'>
+    <xsd:all>
+      <xsd:element name='Location' type='xsd:string' />
+      <xsd:element name='Name' type='xsd:string' />
+      <xsd:element name='Importance' type='xsd:string' />
+      <xsd:element name='StartTime' type='xsd:string' />
+      <xsd:element name='Duration' type='xsd:int' />
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name='Meetings'>
+    <xsd:sequence>
+      <xsd:element name='Meeting' maxOccurs='unbounded' minOccurs='1'/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

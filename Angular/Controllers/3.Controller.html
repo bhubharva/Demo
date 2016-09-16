@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+  <title>Controllers</title>
+</head>
+<body ng-controller="HomeController">  
+  <h1>Controllers with $scope</h1>
+  <h2>Message from controller : {{message}}</h2>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script type="text/javascript">
+    var myApp = angular.module('myApp',[]);
+
+	myApp.controller('HomeController', ['$scope', function($scope) {
+	  $scope.message = 'Controller created successfully';	  
+	  console.log('Controller created successfully');
+	}]);
+  </script>
+</body>
+</html>

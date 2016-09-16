@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+  <title>Forms</title>
+</head>
+<body ng-controller="HomeController">  
+  <h1>Angular Forms</h1>  
+	Username : <input type="text" ng-model="username"/> <br/>
+	Password : <input type="password" ng-model="password"/> <br/>
+	<input type="button" value="Submit" ng-click="submit()"/>
+	<input type="reset" value="Reset" ng-click="reset()"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script type="text/javascript">
+    var myApp = angular.module('myApp',[]);
+
+	myApp.controller('HomeController', ['$scope', function($scope) {
+		$scope.submit = function(){
+			alert('Username : ' + $scope.username + ', Password : ' + $scope.password);
+		}
+		
+		$scope.reset = function(){			
+			$scope.username = '';
+			$scope.password = '';
+		}
+	}]);
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <title>Hello Angular</title>
+  </head>
+  <body>
+	<h1>Hello Angular!</h1>
+    <div ng-init="name='Sushant'">
+	 <input type="text" ng-model="name" placeholder="Enter your name"/>
+	 <h2>Hello <span ng-bind="name"/></h2>
+	 <h3>Hello {{name}}</h3>
+	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  </body>
+</html>

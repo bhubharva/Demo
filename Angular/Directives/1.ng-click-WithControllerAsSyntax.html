@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+  <title>Controllers</title>
+</head>
+<body ng-controller="HomeController as home">  
+  <h1>Controllers with $scope</h1>
+  <h2>Message from controller : {{home.message}}</h2>
+  <h3>Parameter passed : {{home.name}}
+  <div>
+	<input ng-model="home.name">
+	<input type="button" value="Say Hello" ng-click="home.sayHello(home.name)"/>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script type="text/javascript">
+    var myApp = angular.module('myApp',[]);
+
+	myApp.controller('HomeController', [function() {
+	  this.message = 'Hello Angular';
+	    this.sayHello = function(name){
+		this.message = 'Hello ' + name;
+	  }
+
+	}]);
+  </script>
+</body>
+</html>

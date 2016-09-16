@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>HTML Forms</title>
+	</head>
+	<body>
+		<form method="post" action="">
+		<table align="center" border="1">
+			<tr>
+				<td>
+					Name:
+				</td>
+				<td>
+					<input type="text" id="txtName" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Pass:
+				</td>
+				<td>
+					<input type="password" id="txtPassword" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Sex:
+				</td>
+				<td>
+					<input type="radio" id="rdoMale" name="gender" /> Male <input type="radio" id="rdoFemale" name="gender" /> Female
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Is Employed?
+				</td>
+				<td>
+					<input type="checkbox" id="chkEmployeed" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<textarea id="txtComments" rows="4" cols="30"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="hidden" id="hiddenValue"/>
+					<input type="reset" id="btnReset" value="Reset"/>
+					<input type="submit" id="btnSubmit" value="submit"/>
+				</td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>3 Image Window Timer and Other Objects</title>
+		<script type="text/javascript">
+			
+			function OpenFirstPopup()
+			{
+				window.open('http://www.google.com','test_window');
+			}
+
+			function OpenAdvancedPopup()
+			{
+				window.open('http://www.google.com','test_window', 'height=300,width=500');
+			}
+
+			t = null;
+			
+			function StartCounting()
+			{
+				t = setTimeout(StartCounting, 1000);
+				document.getElementById("countingText").innerHTML = Date();
+			}
+
+			function StopCounting()
+			{
+				clearTimeout(t);
+			}
+
+			function Redirect()
+			{
+				setTimeout(LoadNewPage, 5000);
+			}
+
+			function LoadNewPage()
+			{
+				document.location.href = "http://www.google.com";
+			}
+
+			color = 0;
+			colorTimer = null;
+			function ChangeColor()
+			{
+				if(color == 0)
+				{
+					color = 1;
+					document.bgColor = "#FFFFCC"
+				}
+				else
+				{
+					color = 0;
+					document.bgColor = "#CCFFFF"
+				}
+
+				colorTimer = setTimeout(ChangeColor, 1000);
+			}
+
+		</script>
+	</head>
+	<body onload="ChangeColor()">
+
+		<a href="whatever.htm" onmouseover="document.images['example'].src='2.jpg'" onmouseout="document.images['example'].src='1.jpg'">
+			<img src="1.jpg" height="150" width="200" name="example" border="0">
+		</a>
+	
+		<p/><p/><p/>
+		
+		<input type="button" value="Open First Popup" onclick="OpenFirstPopup()" />
+		<input type="button" value="Open Advanced Popup" onclick="OpenAdvancedPopup()" />
+		
+		<p/><p/><p/>
+		
+		<input type="button" value="Start Counting" onclick="StartCounting()" />
+		<input type="button" value="Stop Counting" onclick="StopCounting()" />
+		<h4 id="countingText"></h4>
+
+		<p/><p/><p/>
+		
+		<input type="button" value="Redirect" onclick="Redirect()" />
+
+		<p/><p/><p/>
+		
+		<input type="button" value="Stop Changing Color" onclick="clearTimeout(colorTimer)" />
+
+	</body>
+</html>

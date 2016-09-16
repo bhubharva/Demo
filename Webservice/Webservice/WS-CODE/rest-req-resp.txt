@@ -1,0 +1,26 @@
+API Method: get-order-info
+
+Request:
+  <post>
+     <api-name>get-order-info</api-name>
+     <client-id>0999</client-id>
+     <serial-id>1233749716-4870</serial-id>
+     <omb-id>1364574</omb-id>
+                <merchant-order-id>AMZ11696</merchant-order-id>
+  </post>
+
+
+Response: 
+
+<get-order-info-reply>   
+ <data-checksum><![CDATA[]]></data-checksum>
+<serial-id><![CDATA[1233750509-804]]></serial-id>   
+ <auth-checksum>2ff4ef99219c391069b0344b8e5f93e2</auth-checksum>
+<reply-to-serial-id><![CDATA[1233749716-4870]]></reply-to-serial-id>
+<omb-id><![CDATA[1364574]]></omb-id>
+<merchant-order-id>AMZ11696</merchant-order-id>
+<omb-id><![CDATA[1364574]]></omb-id>
+<manager-order-id><![CDATA[5479341]]></manager-order-id>
+<status><![CDATA[cancelled|pending|downloaded|others]]></status>
+<date-time-uploaded><![CDATA[2009-02-03 20:20:06]]></date-time-uploaded>
+</get-order-info-reply>

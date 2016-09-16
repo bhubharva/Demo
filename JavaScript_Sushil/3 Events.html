@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Are you satisfied with your salary??</title>
+		<script type="text/javascript">
+			function ChangeLabel(currentButton)
+			{
+				if(currentButton == 'yes')
+				{
+					if(document.getElementById('yes').value != "Yes")
+					{
+						document.getElementById('yes').value = "Yes";
+						document.getElementById('no').value = "No";
+					}
+				}
+				else if(currentButton == 'no')
+				{
+					if(document.getElementById('no').value != "Yes")
+					{
+						document.getElementById('yes').value = "No";
+						document.getElementById('no').value = "Yes";
+					}
+				}
+			}
+
+			function ShowMessage()
+			{
+				alert("Great! So, you are satisfied with your salary!!")
+			}
+		</script>
+	</head>
+	<body>
+		<h2>Are you satisfied with your salary?</h2>
+		<input type="button" id="yes" value="Yes" onmouseover="ChangeLabel('yes')" onclick="ShowMessage()"/>
+		<input type="button" id="no" value="No" onmouseover="ChangeLabel('no')" onclick="ShowMessage()"/>
+	</body>
+</html>
+
+
+<!--	onload and onunload events
+<body onload="alert('I am loaded')" onunload="alert('Bye, visit again')">
+-->
+<!--	
+<br/>
+Age: <input type="text" id="txtAge" />
+<input type="button" id="validate" value="Validate" onclick="ValidateAge()"/>
+
+
+function ValidateAge()
+{
+	if(document.getElementById('txtAge').value < 1)
+	{
+		alert("The age should be greater than 0");
+	}
+	else
+	{
+		alert("Correct value");
+	}
+}
+-->

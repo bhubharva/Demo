@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+  <title>Forms</title>
+</head>
+<body ng-controller="HomeController">  
+  <h1>Angular Forms</h1>  
+  <div>
+	<input type="text" ng-model="username"/><br/>
+	Hello <span ng-bind="username"></span><br/>	
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script type="text/javascript">
+    var myApp = angular.module('myApp',[]);
+
+	myApp.controller('HomeController', ['$scope', function($scope) {
+		$scope.username = 'Sushant';
+	}]);
+  </script>
+</body>
+</html>

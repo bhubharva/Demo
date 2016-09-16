@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>5 Dynamic HTML and Dynamic Forms</title>
+		<script type="text/javascript">
+			
+			function CheckPrevCompany()
+			{
+				if(document.getElementById("chkPrevExp").checked)
+				{
+					document.getElementById("hiddenArea").innerHTML = '<br/>Previous Company Name: <input type="text" id="txtPrevCompanyName" />';
+				}
+				else
+				{
+					document.getElementById("hiddenArea").innerHTML = "";
+				}
+			}
+
+
+			function AddValueToDropdown()
+			{
+				var newOption = document.createElement("option");
+				newOption.text = document.getElementById("txtNewValue").value;
+				document.getElementById("selectOptions").options.add(newOption);
+			}
+
+		</script>
+	</head>
+	<body>
+		<form method="post" action="abc.html" onsubmit="return Validate()">
+			Employee's First Name: <input type="text" id="txtFirstName" />
+			<br/>
+			Employee's Last Name: <input type="text" id="txtLastName" />
+			<br/>
+			<input type="checkbox" id="chkPrevExp" onclick="CheckPrevCompany()" /> Has previous experience?
+			<div id="hiddenArea"></div>
+			<br/>
+			<input type="submit" value="Submit Form" />
+		</form>
+
+		<p/><p/><p/>
+		<input type="text" id="txtNewValue" />
+		<input type="button" value="Add New Value" onclick="AddValueToDropdown()" />
+		<select id="selectOptions">
+			<option>first value</option>
+			<option>second value</option>
+			<option>third value</option>
+			<option>fourth value</option>
+		</select>
+	</body>
+</html>

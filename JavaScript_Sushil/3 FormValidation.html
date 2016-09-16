@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Form Validation and RegEx</title>
+		<script type="text/javascript">
+			
+			function Validate()
+			{
+				if(document.getElementById("txtFirstName").value == "")
+				{
+					alert("Please enter the first name");
+					return false;
+				}
+				else
+				{
+					alert("Form is being submitted");
+					return true;
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		
+		<form method="post" action="abc.html" onsubmit="return Validate()">
+			First Name: <input type="text" id="txtFirstName" />
+			<br/>
+			Last Name: <input type="text" id="txtLastName" />
+			<br/>
+			<input type="submit" value="Submit Form" />
+		</form>
+	</body>
+</html>
