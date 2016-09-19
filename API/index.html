@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Employee Database</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+	
+</head>
+<body ng-controller="myCtrl">
+<div class="container-fluid">
+		<header>
+			<h1 class="col-sm-12" align="center">Employee Database</h1>
+			
+		</header>
+	
+
+	<center>
+		<a href="#/" class="btn btn-primary">HOME</a>&nbsp;&nbsp;
+		<a href="#/insert" class="btn btn-primary">INSERT</a>&nbsp;&nbsp;
+		<a href="#/delete" class="btn btn-primary">DELETE</a>&nbsp;&nbsp;
+		<br><br>
+	</center>
+	<div>
+	<div ng-view></div>
+	</div>
+</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp',['ngRoute']);
+		app.config(['$routeProvider', function($routeProvider)
+		{
+			$routeProvider
+			.when('/',{
+				templateUrl : 'myTable.html',
+				controller : 'myCtrl'
+			})
+
+			.when('/insert',{
+				templateUrl : 'insert.html',
+
+			})
+
+			
+			.otherwise({redirectTo:'/'})
+
+		}])
+
+		app.controller('myCtrl',['$scope','$location','$http', function($scope,$location,$http)
+		{
+			getTable();
+			function getTable()
+			{
+				$http.get('api.php').then(function(response)
+				{
+					$scope.details = response.data;
+					console.log(response);
+				})
+			}
+
+			$scope.insertRecord = function (info)
+			{	
+				
+				console.log(info);
+				 var config = {
+	                headers : {
+	                    'Content-Type': 'application/JSON;charset=utf-8;'
+	                }
+	            }
+
+				var data = {'emp_id':info.emp_id,'fname':info.fname,'mname':info.mname,'lname':info.lname,'city':info.city,'salary':info.salary};
+				var data1 = $.param(data);
+				/*var obj = JSON.parse(data);*/
+				
+				$http.post('http://localhost/API/api.php',data)//1,config)
+				.success(function(response)
+					{
+						console.log("JS");
+						
+							
+							console.log(response);
+							
+						
+
+					})
+				getTable();
+				$location.path('/');
+			}
+
+
+			$scope.deleteRecord = function (inf)
+			{
+				
+				var data={'emp_id':inf.emp_id};
+				alert(data.emp_id);
+				 var config = {
+			        headers: {
+			            'content-type': 'application/json'
+			        }
+			    };
+				$http.delete('api.php?emp_id='+data.emp_id,config).success(function(response)
+				{
+					if(response==true)
+					{
+						getTable();
+						$location.path('/');
+
+						console.log(response);
+					}
+				})
+
+			}
+		}]);
+
+
+	</script>
+
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Employee Database</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container-fluid col-sm-8 form-class">
+<center>
+	<h3> Delete Employee Record </h3>
+
+</center>
+<form action="api.php" method="POST" name="empForm" ><br><br>
+
+	<div class="form-group">
+		<label for=""> Employee ID </label>
+		<input type="text" name="empID" class="form-control" id="" ng-model="myId.emp_id"><br><br>
+	</div>
+
+	<center>
+	<button ng-click="deleteRecord(myId);" ng-disabled="empForm.$invalid" class="btn btn-primary">SUBMIT</button>
+</center>
+
+{{myId}}
+
+</form>
+</div>
+</body>
