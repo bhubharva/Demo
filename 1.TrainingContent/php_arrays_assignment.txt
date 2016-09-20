@@ -1,0 +1,58 @@
+1) understand the php function array_count_values. Create a function my_array_count_values which behaves exactly like array_count_values.
+
+2) Write a function LongestWord($string) take the $string parameter being passed and return the largest word in the string. 
+  If there are two or more words that are the same length, return the first word from the string with that length.
+   use the following php functions in your solution 
+
+	* Function that Split a string and returns an array of string.  
+	* function that can Sort an array by values using a user-defined comparison function. 
+	   Write your own comparison function.
+
+3) Create an address book web application  which will store the following data
+
+Name: 
+Email: there can be multiple email addresses
+Phone number : 
+      office : there can be multiple office numbers
+      home : There can be Multiple mobile numbers.
+
+Design the data structure to store this data using PHP array
+
+Here is a sample data structure using php arrays
+
+$data = array(
+ 
+	array(
+		'name' => 'krishna'.
+		'email' => array('krishna@hotmail.com','krishna@gmail.com'),
+		'number'=> ....
+	),
+	array(
+		'name' => 'harshad'.
+		'email' => array('harshad@hotmail.com','harshad@gmail.com'),
+		'number'=> ....
+	),
+
+
+);
+
+
+The application  should have following features.
+	* add new contact
+	*search for contacts using name
+	* search for contact using email,
+	* search for contact using phone number
+	*delete a contact
+
+you can save your datastructure in a text file in json format.
+
+here is how you save your data structure to a file and also read  it from file.
+
+save data to text file.
+
+$arr1 = array ('a'=>1,'b'=>2,'c'=>3,'d'=>4,'e'=>5);
+file_put_contents("array.json",json_encode($arr1));
+
+get data from file.
+
+$arr2 = json_decode(file_get_contents('array.json'), true);
