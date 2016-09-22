@@ -1,0 +1,16 @@
+<div ng-controller="MyController as ctl">
+  <form role="form" name="ctl.newItemForm">
+    <input type="text" id="firstName" ng-model="ctl.firstName"/>
+  </form>
+</div>
+
+
+
+ <script type="text/javascript">
+    
+    function MyController() {
+  var self = this;
+  console.log(self.newItemForm);
+}
+
+  </script>

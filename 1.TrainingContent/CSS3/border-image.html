@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+.example-one {
+	border: 15px solid transparent;
+	border-image: url(http://www.w3.org/TR/css3-background/border.png) 40% round; /* repeat, stretch */ 
+}
+
+.example-three {
+	border-style: solid;
+	border-width: 28px 28px 27px 27px;
+	-moz-border-image: url(http://www.w3.org/TR/css3-background/border.png) 28 28 27 27 repeat;
+	-webkit-border-image: url(http://www.w3.org/TR/css3-background/border.png) 28 28 27 27 repeat;
+	-o-border-image: url(http://www.w3.org/TR/css3-background/border.png) 28 28 27 27 repeat;
+	border-image: url(http://www.w3.org/TR/css3-background/border.png) 28 28 27 27 repeat;
+}
+
+</style>
+</head>
+<body>
+
+	<div class="example-one">
+		<p>The horizontal offset of the shadow, positive means the shadow will be on the right of the box, a negative offset will put the shadow on the left of the box.
+	The vertical offset of the shadow, a negative one means the box-shadow will be above the box, a positive one means the shadow will be below the box.
+	The blur radius (optional), if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.
+	The spread radius (optional), positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur).
+	Color</p>
+	</div>
+
+	<div class="example-three">
+		The horizontal offset of the shadow, positive means the shadow will be on the right of the box, a negative offset will put the shadow on the left of the box.
+	The vertical offset of the shadow, a negative one means the box-shadow will be above the box, a positive one means the shadow will be below the box.
+	The blur radius (optional), if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.
+	The spread radius (optional), positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur).
+	Color
+	</div>
+
+</body>
+</html>

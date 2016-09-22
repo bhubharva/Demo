@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<!-- viewport meta to reset iPhone inital scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untitled Document</title>
+<style>
+
+body:after {
+	content: "less than 320px";
+	font-size: 300%;
+	font-weight: bold;
+	position: fixed;
+	bottom: 60px;
+	width: 100%;
+	text-align: center;
+	background-color: #CCC;
+	color: #fff;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 320px) {
+	body:after {
+		content: "320 to 480px";
+		background-color: #69a;
+	}
+	#header, #nav, #banner, #footer{ width:100%; margin:0 auto; display:block;}
+}
+@media only screen and (min-width: 480px) {
+	body:after {
+		content: "480 to 768px";
+		background-color: #54b;
+	}
+}
+@media only screen and (min-width: 768px) {
+	body:after {
+		content: "768 to 1024px";
+		background-color: #88b;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	body:after {
+		content: "1024 and up";
+		background-color: #33b;
+	}
+
+</style>
+</head>
+
+<body>
+
+</body>
+</html>

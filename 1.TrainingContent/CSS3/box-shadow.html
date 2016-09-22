@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+.example-one,
+.example-two {
+  width: 200px;
+  //height: 200px;
+}
+
+
+.example-one {
+	-webkit-box-shadow: 1px 10px 5px -7px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.75);
+}
+
+.example-two {
+ 	-moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
+}
+
+</style>
+</head>
+<body>
+	<div class="example-one">
+		The horizontal offset of the shadow, positive means the shadow will be on the right of the box, a negative offset will put the shadow on the left of the box.
+The vertical offset of the shadow, a negative one means the box-shadow will be above the box, a positive one means the shadow will be below the box.
+The blur radius (optional), if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.
+The spread radius (optional), positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur).
+Color
+</div>
+
+<br />
+
+<div class="example-two">
+		The horizontal offset of the shadow, positive means the shadow will be on the right of the box, a negative offset will put the shadow on the left of the box.
+The vertical offset of the shadow, a negative one means the box-shadow will be above the box, a positive one means the shadow will be below the box.
+The blur radius (optional), if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.
+The spread radius (optional), positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur).
+Color
+</div>
+
+</body>
+</html>
